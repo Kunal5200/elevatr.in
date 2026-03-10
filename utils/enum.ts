@@ -3,4 +3,5 @@ export enum COLORS {
   HEADER_DARK_BG = "#3E3E3E",
   WHITE = "#ffffff",
   BLACK = "#000000",
+  PRIMARY = "#7C5DFA",
 }

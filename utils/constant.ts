@@ -4,6 +4,8 @@ import client3 from "@/images/clients/client3.png";
 import client4 from "@/images/clients/client4.png";
 import client5 from "@/images/clients/client5.svg";
 import client6 from "@/images/clients/client6.png";
+import { Instagram, X } from "@mui/icons-material";
+import { FaFacebookF } from "react-icons/fa";
 export const HEADER_LINKS = [
   {
     label: "Home",
@@ -41,5 +43,17 @@ export const Clients = [
   },
   {
     img: client6,
+  },
+];
+
+export const SOCIAL_ICONS = [
+  {
+    icon: FaFacebookF,
+  },
+  {
+    icon: Instagram,
+  },
+  {
+    icon: X,
   },
 ];

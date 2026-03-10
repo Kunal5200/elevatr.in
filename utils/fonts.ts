@@ -1,4 +1,4 @@
-import { Poppins } from "next/font/google";
+import { Caveat, Poppins } from "next/font/google";
 import localFont from "next/font/local";
 export const surgena = localFont({
   src: [
@@ -28,5 +28,10 @@ export const surgena = localFont({
 export const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   style: "normal",
+  subsets: ["latin"],
+});
+
+export const caveat = Caveat({
+  weight: "variable",
   subsets: ["latin"],
 });

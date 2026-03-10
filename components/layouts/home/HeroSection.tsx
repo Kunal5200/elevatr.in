@@ -5,6 +5,7 @@ import { poppins, surgena } from "@/utils/fonts";
 import logo from "@/images/logo/logo.png";
 import Image from "next/image";
 import StartCard from "./components/Start-Card";
+import abstract from "@/images/banner/abstract.png";
 const HeroSection = () => {
   return (
     <Box>
@@ -47,10 +48,14 @@ const HeroSection = () => {
               (Built for what’s next)
             </Typography>
           </Box>
+          <Box sx={{ textAlign: "center" }}>
+            <Image src={abstract} alt="" />
+          </Box>
         </Container>
+
         <Container maxWidth="lg">
           <Grid container>
-            <Grid size={6} margin="auto">
+            <Grid size={8} margin="auto">
               <StartCard />
             </Grid>
           </Grid>

@@ -26,7 +26,7 @@ const Header = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          width: "600px",
+          width: "700px",
           padding: "8px 16px",
           borderRadius: "100px",
           border: "1px solid rgba(255, 255, 255, 0.08)",
@@ -43,8 +43,9 @@ const Header = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            width: 350,
+            width: 400,
             height: 60,
+            gap: 1,
           }}
         >
           {HEADER_LINKS.map((val, i) => (
@@ -54,6 +55,13 @@ const Header = () => {
                   color: "#DEDEDE",
                   fontSize: 14,
                   fontFamily: poppins.style.fontFamily,
+                  border: "1px solid #4E4E4E",
+                  borderRadius: "72px",
+                  height: 48,
+                  width: 80,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                 }}
               >
                 {val.label}
@@ -74,7 +82,7 @@ const Header = () => {
             height: 60,
           }}
         >
-          Contact Us
+          Join Waitlist
         </Button>
       </Box>
     </Box>
