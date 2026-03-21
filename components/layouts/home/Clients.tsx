@@ -14,7 +14,7 @@ const Clients = () => {
           src={client.img}
           alt={`client-${index}`}
           style={{
-            height: "40px",
+            height: "20px",
             width: "auto",
             filter: "grayscale(100%) opacity(0.5)",
             transition: "all 0.3s ease",
