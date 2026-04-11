@@ -39,7 +39,11 @@ const HeroSection = () => {
             </Box>
             <Box sx={{ margin: "auto", textAlign: "left" }}>
               <Typography
-                sx={{ fontSize: 100, fontFamily: poppins.style.fontFamily }}
+                sx={{
+                  fontSize: 100,
+                  fontFamily: poppins.style.fontFamily,
+                  fontWeight: 500,
+                }}
               >
                 Career Infrastructure, Just got Reimagined.
               </Typography>
