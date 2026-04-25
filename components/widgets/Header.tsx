@@ -58,7 +58,7 @@ const Header = () => {
                   border: "1px solid #4E4E4E",
                   borderRadius: "72px",
                   height: 48,
-                  width: 80,
+                  width: 120,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",

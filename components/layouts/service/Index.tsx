@@ -5,6 +5,7 @@ import CareerSystem from "./CareerSystem";
 import HowWorks from "./How-Works";
 
 import Steps from "./Steps";
+import Skills from "./Skills";
 
 const ServiceLayout = () => {
   return (
@@ -14,6 +15,7 @@ const ServiceLayout = () => {
       <CareerSystem />
       <HowWorks />
       <Steps />
+      <Skills />
     </div>
   );
 };

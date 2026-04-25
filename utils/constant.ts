@@ -15,10 +15,10 @@ export const HEADER_LINKS = [
     label: "Service",
     url: "/service",
   },
-  {
-    label: "About Us",
-    url: "/about-us",
-  },
+  // {
+  //   label: "About Us",
+  //   url: "/about-us",
+  // },
   {
     label: "Contact",
     url: "/contact",
