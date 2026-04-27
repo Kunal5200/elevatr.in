@@ -1,7 +1,10 @@
+"use client";
 import { COLORS } from "@/utils/enum";
 import { poppins, surgena } from "@/utils/fonts";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import { Box, Container, IconButton, Stack, Typography } from "@mui/material";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SkillCard from "./components/Skill-Card";
 
 const Skills = () => {
   return (
@@ -52,6 +55,11 @@ const Skills = () => {
             </IconButton>
           </Stack>
         </Stack>
+        <Swiper>
+          <SwiperSlide>
+            <SkillCard />
+          </SwiperSlide>
+        </Swiper>
       </Container>
     </Box>
   );
