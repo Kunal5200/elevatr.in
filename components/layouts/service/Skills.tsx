@@ -5,8 +5,12 @@ import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import { Box, Container, IconButton, Stack, Typography } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SkillCard from "./components/Skill-Card";
+import { SKILLS_CARD_DATA } from "@/utils/constant";
+import { useRef } from "react";
 
 const Skills = () => {
+  const swiperRef = useRef<any>(null);
+
   return (
     <Box
       sx={{
@@ -14,7 +18,7 @@ const Skills = () => {
         height: "100vh",
         display: "flex",
         alignItems: "center",
-        jusifyContent: "center",
+        justifyContent: "center",
       }}
     >
       <Container maxWidth="lg">
@@ -47,19 +51,41 @@ const Skills = () => {
             </Typography>
           </Box>
           <Stack direction="row" alignItems={"center"} spacing={2}>
-            <IconButton sx={{ border: "1px solid #000" }}>
+            <IconButton
+              onClick={() => swiperRef.current?.slidePrev()}
+              sx={{ border: "1px solid #000" }}
+            >
               <ChevronLeft />
             </IconButton>
-            <IconButton sx={{ border: "1px solid #000" }}>
+            <IconButton
+              onClick={() => swiperRef.current?.slideNext()}
+              sx={{ border: "1px solid #000" }}
+            >
               <ChevronRight />
             </IconButton>
           </Stack>
         </Stack>
-        <Swiper>
-          <SwiperSlide>
-            <SkillCard />
-          </SwiperSlide>
-        </Swiper>
+        <Box sx={{ mt: 4 }}>
+          <Swiper
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
+            spaceBetween={80}
+            slidesPerView={3}
+          >
+            {SKILLS_CARD_DATA.map((val, i) => (
+              <SwiperSlide key={i}>
+                <SkillCard
+                  image={val.image}
+                  title={val.title}
+                  description={val.description}
+                  buttonText={val.buttonText}
+                  key={i}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </Box>
       </Container>
     </Box>
   );

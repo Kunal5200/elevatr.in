@@ -6,6 +6,10 @@ import client5 from "@/images/clients/client5.svg";
 import client6 from "@/images/clients/client6.png";
 import { Instagram, X } from "@mui/icons-material";
 import { FaFacebookF } from "react-icons/fa";
+import career from "@/images/products/product-breakdown/career-identity.png";
+import skillIntelligence from "@/images/products/product-breakdown/skill-intelligence.png";
+import opportunityMatching from "@/images/products/product-breakdown/opportunity-matching.png";
+import { SkillCardType } from "./types";
 export const HEADER_LINKS = [
   {
     label: "Home",
@@ -55,5 +59,32 @@ export const SOCIAL_ICONS = [
   },
   {
     icon: X,
+  },
+];
+
+export const SKILLS_CARD_DATA: SkillCardType[] = [
+  {
+    image: career,
+    title: "Career Identity (Live)",
+    description: "Your foundation, done right.",
+    buttonText: "Build your profile →",
+  },
+  {
+    image: skillIntelligence,
+    title: "Skill Intelligence (Rolling Out)",
+    description: "Know what to do next.",
+    buttonText: "Unlock your skills →",
+  },
+  {
+    image: opportunityMatching,
+    title: "Opportunity Matching (Planned)",
+    description: "Stop applying blindly.",
+    buttonText: "Find your next match →",
+  },
+  {
+    image: career,
+    title: "All with the security",
+    description: "Learn more about Privacy",
+    buttonText: "Learn More",
   },
 ];

@@ -1,36 +1,116 @@
+import { COLORS } from "@/utils/enum";
 import { poppins } from "@/utils/fonts";
+import { Circle } from "@mui/icons-material";
 import { Box, Typography } from "@mui/material";
 import React from "react";
+import Image from "next/image";
+import FilledButton from "@/components/widgets/FilledButton";
+import { SkillCardType } from "@/utils/types";
 
-const SkillCard = () => {
+const SkillCard = ({
+  title,
+  description,
+  buttonText,
+  image,
+}: SkillCardType) => {
   return (
-    <Box>
-      <Box
+    <Box
+      sx={{
+        position: "relative",
+        width: "100%",
+        height: 446,
+        borderRadius: "28px",
+        backgroundColor: "#F5F5F7",
+        overflow: "hidden",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        pt: "40px",
+        px: "24px",
+      }}
+    >
+      <Typography
         sx={{
-          width: 380,
-          height: 446,
-          borderRadius: "18px",
-          backgroundColor: "#F5F5F7",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          flexDirection: "column",
+          fontFamily: poppins.style.fontFamily,
+          color: "#1D1D1F",
+          fontSize: "26px",
+          fontWeight: 700,
+          lineHeight: "32px",
+          textAlign: "center",
         }}
       >
-        <Typography
+        {title}
+      </Typography>
+      <Typography
+        sx={{
+          fontSize: "16px",
+          fontFamily: poppins.style.fontFamily,
+          color: COLORS.PRIMARY,
+          mt: "8px",
+          fontWeight: 500,
+          textAlign: "center",
+        }}
+      >
+        {description}
+      </Typography>
+
+      <FilledButton
+        sx={{
+          backgroundColor: COLORS.PRIMARY,
+          color: COLORS.WHITE,
+          display: "flex",
+          alignItems: "center",
+          gap: "10px",
+          p: "10px 24px",
+          borderRadius: "100px",
+          fontFamily: poppins.style.fontFamily,
+          fontSize: "15px",
+          fontWeight: 600,
+          mt: "20px",
+          textTransform: "none",
+          boxShadow: "none",
+          transition: "all 0.2s ease-in-out",
+          "&:hover": {
+            backgroundColor: "#6345d6",
+            boxShadow: "0 4px 12px rgba(124, 93, 250, 0.2)",
+          },
+        }}
+      >
+        <Circle sx={{ width: 8, height: 8, color: COLORS.WHITE }} />
+        {buttonText}
+      </FilledButton>
+
+      <Box
+        sx={{
+          position: "absolute",
+          bottom: "-15px",
+          left: 0,
+          right: 0,
+          height: "220px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "flex-end",
+          pointerEvents: "none",
+        }}
+      >
+        <Box
           sx={{
-            fontFamily: poppins.style.fontFamily,
-            color: "#1D1D1F",
-            fontSize: "24px",
-            fontWeight: 700,
-            lineHeight: "28px",
+            position: "relative",
+            width: "100%",
+            height: "100%",
           }}
         >
-          Career Identity (Live)
-        </Typography>
-        <Typography sx={{ fontSize: 17, fontFamily: poppins.style.fontFamily }}>
-          Your foundation, done right.
-        </Typography>
+          <Image
+            src={image}
+            alt={title}
+            fill
+            sizes="380px"
+            style={{
+              objectFit: "contain",
+              objectPosition: "bottom center",
+            }}
+          />
+        </Box>
       </Box>
     </Box>
   );

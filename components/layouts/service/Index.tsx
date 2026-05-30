@@ -6,6 +6,7 @@ import HowWorks from "./How-Works";
 
 import Steps from "./Steps";
 import Skills from "./Skills";
+import WhyElevatr from "./Why-Elevatr";
 
 const ServiceLayout = () => {
   return (
@@ -16,6 +17,7 @@ const ServiceLayout = () => {
       <HowWorks />
       <Steps />
       <Skills />
+      <WhyElevatr />
     </div>
   );
 };
