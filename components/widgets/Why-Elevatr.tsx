@@ -2,6 +2,8 @@ import { COLORS } from "@/utils/enum";
 import { poppins, surgena } from "@/utils/fonts";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
+import WhyElevatrCard from "./Why-Elevatr-Card";
+import { WHY_ELEVATR_CARD_DATA } from "@/utils/constant";
 
 const WhyElevatr = () => {
   return (
@@ -39,6 +41,17 @@ const WhyElevatr = () => {
               Most platforms help you apply. We help you progress.
             </Typography>
           </Grid>
+        </Grid>
+        <Grid container spacing={4} sx={{ mt: 3 }}>
+          {WHY_ELEVATR_CARD_DATA.map((val, i) => (
+            <Grid size={6}>
+              <WhyElevatrCard
+                isEven={val.isEven}
+                title={val.title}
+                data={val.data}
+              />
+            </Grid>
+          ))}
         </Grid>
       </Container>
     </Box>

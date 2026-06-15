@@ -1,9 +1,11 @@
 "use client";
-import React, { useRef, useEffect } from "react";
-import { motion, AnimatePresence, useInView } from "framer-motion";
+import React from "react";
+import { motion, MotionValue, useTransform } from "framer-motion";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import { COLORS } from "@/utils/enum";
 import { poppins, surgena } from "@/utils/fonts";
+
+const COLLAPSED_HEIGHT = 100;
 
 export interface AnimatedStepProps {
   largeTitleLine1: string;
@@ -12,8 +14,10 @@ export interface AnimatedStepProps {
   smallTitle: string;
   smallDesc1: string;
   smallDesc2: string;
-  isActive?: boolean;
-  onFocus?: () => void;
+  index: number;
+  totalSteps: number;
+  scrollYProgress: MotionValue<number>;
+  isLastStep: boolean;
 }
 
 export default function AnimatedStep({
@@ -23,69 +27,147 @@ export default function AnimatedStep({
   smallTitle,
   smallDesc1,
   smallDesc2,
-  isActive,
-  onFocus,
+  index,
+  totalSteps,
+  scrollYProgress,
+  isLastStep,
 }: AnimatedStepProps) {
-  const ref = useRef<HTMLDivElement>(null);
+  const sectionSize = 1 / totalSteps;
+  const rangeStart = index * sectionSize;
 
-  // Reverted back to native Window tracking so you can scroll freely on the page
-  const isInView = useInView(ref, { margin: "-50% 0px -49% 0px" });
+  // The scroll point where collapsed header replaces the large content
+  const switchPoint = rangeStart + sectionSize * 0.80;
 
-  useEffect(() => {
-    if (isInView && onFocus) {
-      onFocus();
-    }
-  }, [isInView]);
+  // ── Collapsed header: appears at switch point (last step: never) ──
+  const smallOpacity = useTransform(scrollYProgress, (v) =>
+    v >= switchPoint ? 1 : 0
+  );
+  // Subtle slide-up just before the switch for polish
+  const smallY = useTransform(scrollYProgress, (v) => {
+    const slideStart = switchPoint - 0.015;
+    if (v >= switchPoint) return 0;
+    if (v < slideStart) return 8;
+    return 8 * (1 - (v - slideStart) / 0.015);
+  });
 
-  const currentlyActive = isActive !== undefined ? isActive : isInView;
+  // ── Large content: hidden at switch point (last step: always visible) ──
+  const largeOpacity = useTransform(scrollYProgress, (v) =>
+    v >= switchPoint ? 0 : 1
+  );
+
+  // ── Subtle depth animation on large content before it switches ──
+  const largeScale = useTransform(scrollYProgress, (v) => {
+    const start = rangeStart + sectionSize * 0.50;
+    if (v < start) return 1;
+    if (v >= switchPoint) return 0.97;
+    return 1 - 0.03 * ((v - start) / (switchPoint - start));
+  });
+  const largeTranslateY = useTransform(scrollYProgress, (v) => {
+    const start = rangeStart + sectionSize * 0.50;
+    if (v < start) return 0;
+    if (v >= switchPoint) return -15;
+    return -15 * ((v - start) / (switchPoint - start));
+  });
 
   return (
     <Box
-      ref={ref}
       sx={{
-        display: "grid",
-        gridTemplateColumns: "1fr",
-        gridTemplateRows: "1fr",
-        placeItems: "center",
-        position: "relative",
-        height: "60vh",
+        position: "sticky",
+        top: `${index * COLLAPSED_HEIGHT}px`,
+        zIndex: index + 1,
+        backgroundColor: "#fff",
+        height: `calc(100vh - ${index * COLLAPSED_HEIGHT}px)`,
+        overflow: "hidden",
+        boxShadow:
+          index > 0
+            ? "0 -4px 20px rgba(0, 0, 0, 0.06), 0 -1px 4px rgba(0, 0, 0, 0.04)"
+            : "none",
       }}
     >
-      <Container
-        maxWidth="lg"
-        sx={{
-          position: "relative",
-          display: "grid",
-          gridTemplateColumns: "1fr",
-          gridTemplateRows: "1fr",
+      {/* ───── Collapsed Header ───── */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          height: COLLAPSED_HEIGHT,
+          display: "flex",
+          alignItems: "center",
+
+          pointerEvents: "none",
+          zIndex: 2,
+          backgroundColor: "#fff",
+          opacity: smallOpacity,
+          y: smallY,
         }}
       >
-        <motion.div
-          initial={false}
-          animate={{
-            opacity: currentlyActive ? 1 : 0,
-            scale: currentlyActive ? 1 : 0.9,
-            y: currentlyActive ? 0 : 20,
-            pointerEvents: currentlyActive ? "auto" : "none",
-          }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          style={{
-            gridRow: 1,
-            gridColumn: 1,
-            width: "100%",
-            alignSelf: "center",
-          }}
-        >
+        <Container maxWidth="lg">
+          <Typography
+            sx={{
+              color: COLORS.BLACK,
+              fontFamily: poppins.style.fontFamily,
+              fontSize: 22,
+              fontWeight: 600,
+              lineHeight: "28px",
+            }}
+          >
+            {smallTitle}
+          </Typography>
+          <Typography
+            sx={{
+              fontFamily: surgena.style.fontFamily,
+              color: COLORS.GRAY,
+              fontSize: 14,
+              fontWeight: 500,
+              lineHeight: "20px",
+              mt: 0.5,
+            }}
+          >
+            {smallDesc1} {smallDesc2}
+          </Typography>
+        </Container>
+      </motion.div>
+
+      {/* ───── Active Large Content ───── */}
+      <motion.div
+        initial={{ opacity: 1 }}
+        style={{
+          height: "100%",
+          display: "flex",
+          alignItems: "center",
+          opacity: largeOpacity,
+          scale: largeScale,
+          y: largeTranslateY,
+        }}
+      >
+        <Container maxWidth="lg">
           <Grid container alignItems="flex-end" spacing={3}>
             <Grid size={12}>
               <Typography
                 sx={{
                   color: COLORS.BLACK,
                   fontFamily: poppins.style.fontFamily,
-                  fontSize: "125px",
+                  fontSize: {
+                    xs: "48px",
+                    sm: "80px",
+                    md: "100px",
+                    lg: "125px",
+                  },
                   fontWeight: 500,
-                  lineHeight: "100px",
-                  letterSpacing: "-7.68px",
+                  lineHeight: {
+                    xs: "52px",
+                    sm: "80px",
+                    md: "95px",
+                    lg: "105px",
+                  },
+                  letterSpacing: {
+                    xs: "-1.5px",
+                    sm: "-4px",
+                    md: "-6px",
+                    lg: "-7.68px",
+                  },
                 }}
               >
                 {largeTitleLine1}
@@ -96,10 +178,25 @@ export default function AnimatedStep({
                 sx={{
                   color: COLORS.BLACK,
                   fontFamily: poppins.style.fontFamily,
-                  fontSize: "125px",
+                  fontSize: {
+                    xs: "48px",
+                    sm: "80px",
+                    md: "100px",
+                    lg: "125px",
+                  },
                   fontWeight: 500,
-                  lineHeight: "100px",
-                  letterSpacing: "-7.68px",
+                  lineHeight: {
+                    xs: "52px",
+                    sm: "80px",
+                    md: "95px",
+                    lg: "105px",
+                  },
+                  letterSpacing: {
+                    xs: "-1.5px",
+                    sm: "-4px",
+                    md: "-6px",
+                    lg: "-7.68px",
+                  },
                 }}
               >
                 {largeTitleLine2}
@@ -108,75 +205,20 @@ export default function AnimatedStep({
             <Grid size={6}>
               <Typography
                 sx={{
-                  fontSize: 24,
+                  fontSize: { xs: 16, sm: 20, md: 24 },
                   fontFamily: surgena.style.fontFamily,
                   fontWeight: 600,
-                  lineHeight: "36px",
+                  lineHeight: { xs: "24px", sm: "30px", md: "36px" },
                   color: COLORS.GRAY,
+                  mb: { xs: 1, sm: 2, md: 3 },
                 }}
               >
                 {largeDesc}
               </Typography>
             </Grid>
           </Grid>
-        </motion.div>
-
-        <motion.div
-          initial={false}
-          animate={{
-            opacity: !currentlyActive ? 1 : 0,
-            scale: !currentlyActive ? 1 : 0.9,
-            pointerEvents: !currentlyActive ? "auto" : "none",
-          }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-          style={{
-            gridRow: 1,
-            gridColumn: 1,
-            width: "100%",
-            alignSelf: "center",
-          }}
-        >
-          <Grid container>
-            <Grid size={12}>
-              <Typography
-                sx={{
-                  color: COLORS.BLACK,
-                  fontFamily: poppins.style.fontFamily,
-                  fontSize: 48,
-                  fontWeight: 700,
-                  lineHeight: "60px",
-                }}
-              >
-                {smallTitle}
-              </Typography>
-              <Typography
-                sx={{
-                  fontFamily: surgena.style.fontFamily,
-                  color: COLORS.GRAY,
-                  fontSize: 24,
-                  fontWeight: 600,
-                  lineHeight: "36px",
-                  mt: 2,
-                }}
-              >
-                {smallDesc1}
-              </Typography>
-              <Typography
-                sx={{
-                  fontFamily: surgena.style.fontFamily,
-                  color: COLORS.GRAY,
-                  fontSize: 24,
-                  fontWeight: 600,
-                  lineHeight: "36px",
-                  mt: 2,
-                }}
-              >
-                {smallDesc2}
-              </Typography>
-            </Grid>
-          </Grid>
-        </motion.div>
-      </Container>
+        </Container>
+      </motion.div>
     </Box>
   );
 }

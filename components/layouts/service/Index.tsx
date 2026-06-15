@@ -6,7 +6,8 @@ import HowWorks from "./How-Works";
 
 import Steps from "./Steps";
 import Skills from "./Skills";
-import WhyElevatr from "./Why-Elevatr";
+import WhyElevatr from "../../widgets/Why-Elevatr";
+import Careers from "./Careers";
 
 const ServiceLayout = () => {
   return (
@@ -18,6 +19,7 @@ const ServiceLayout = () => {
       <Steps />
       <Skills />
       <WhyElevatr />
+      <Careers />
     </div>
   );
 };

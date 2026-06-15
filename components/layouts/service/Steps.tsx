@@ -1,6 +1,7 @@
 "use client";
 import { Box } from "@mui/material";
-import React, { useState } from "react";
+import React, { useRef } from "react";
+import { useScroll } from "framer-motion";
 import AnimatedStep from "./components/AnimatedStep";
 
 const stepsData = [
@@ -45,24 +46,29 @@ const stepsData = [
 ];
 
 const Steps = () => {
-  const [activeStep, setActiveStep] = useState(0);
-  const containerRef = React.useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
 
   return (
     <Box
       ref={containerRef}
       sx={{
-        width: "100%",
-        display: "flex",
-        flexDirection: "column",
+        position: "relative",
+        height: `${(stepsData.length + 1) * 100}vh`,
       }}
     >
       {stepsData.map((step, index) => (
         <AnimatedStep
           key={index}
           {...step}
-          isActive={activeStep === index}
-          onFocus={() => setActiveStep(index)}
+          index={index}
+          totalSteps={stepsData.length}
+          isLastStep={index === stepsData.length - 1}
+          scrollYProgress={scrollYProgress}
         />
       ))}
     </Box>

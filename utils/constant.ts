@@ -4,12 +4,12 @@ import client3 from "@/images/clients/client3.png";
 import client4 from "@/images/clients/client4.png";
 import client5 from "@/images/clients/client5.svg";
 import client6 from "@/images/clients/client6.png";
-import { Instagram, X } from "@mui/icons-material";
+import { Cancel, CheckCircle, Instagram, X } from "@mui/icons-material";
 import { FaFacebookF } from "react-icons/fa";
 import career from "@/images/products/product-breakdown/career-identity.png";
 import skillIntelligence from "@/images/products/product-breakdown/skill-intelligence.png";
 import opportunityMatching from "@/images/products/product-breakdown/opportunity-matching.png";
-import { SkillCardType } from "./types";
+import { SkillCardType, WHY_ELEVATR_CARD_PROPS } from "./types";
 export const HEADER_LINKS = [
   {
     label: "Home",
@@ -86,5 +86,44 @@ export const SKILLS_CARD_DATA: SkillCardType[] = [
     title: "All with the security",
     description: "Learn more about Privacy",
     buttonText: "Learn More",
+  },
+];
+
+export const WHY_ELEVATR_CARD_DATA: WHY_ELEVATR_CARD_PROPS[] = [
+  {
+    title: "Others",
+    isEven: false,
+    data: [
+      {
+        title: "Focus on jobs",
+        icon: Cancel,
+      },
+      {
+        title: "Treats resume as files",
+        icon: Cancel,
+      },
+      {
+        title: "leaves you guessing",
+        icon: Cancel,
+      },
+    ],
+  },
+  {
+    title: "Elevatr",
+    isEven: true,
+    data: [
+      {
+        title: "Focuses on your entire career journey",
+        icon: CheckCircle,
+      },
+      {
+        title: "Treats your profile as data",
+        icon: CheckCircle,
+      },
+      {
+        title: "gives you direction",
+        icon: CheckCircle,
+      },
+    ],
   },
 ];
