@@ -12,7 +12,10 @@ const FilledButton = ({
   props?: ButtonProps;
 }) => {
   return (
-    <Button sx={{ backgroundColor: COLORS.PRIMARY, ...sx }} {...props}>
+    <Button
+      sx={{ backgroundColor: COLORS.PRIMARY, ...sx, color: COLORS.WHITE }}
+      {...props}
+    >
       {children}
     </Button>
   );

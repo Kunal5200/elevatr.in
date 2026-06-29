@@ -26,7 +26,7 @@ const Clients = () => {
   }));
 
   return (
-    <Box sx={{ mt: 10 }}>
+    <Box sx={{ mt: 5 }}>
       <Container maxWidth="lg">
         <Grid container>
           <Grid size={12} margin={"auto"}>
