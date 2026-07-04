@@ -18,12 +18,12 @@ const ContactForm = () => {
   return (
     <Box sx={{ mt: 10 }}>
       <Container maxWidth="lg">
-        <Grid container spacing={4} rowSpacing={20}>
+        <Grid container spacing={4}>
           <Grid size={4}>
-            <TextField label="Your Name" variant="standard" fullWidth />
+            <TextField label="Your Name*" variant="standard" fullWidth />
           </Grid>
           <Grid size={4}>
-            <TextField label="Email" variant="standard" fullWidth />
+            <TextField label="Email*" variant="standard" fullWidth />
           </Grid>
           <Grid size={4}>
             <MuiTelInput
@@ -34,7 +34,13 @@ const ContactForm = () => {
             />
           </Grid>
           <Grid size={12}>
-            <TextField label="Email" variant="standard" fullWidth multiline />
+            <TextField
+              label="Message*"
+              variant="standard"
+              fullWidth
+              multiline
+              rows={5}
+            />
           </Grid>
         </Grid>
         <Stack

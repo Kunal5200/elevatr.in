@@ -9,6 +9,9 @@ import HeroSection2 from "./HeroSection2";
 import SmallTrustLine from "./SmallTrustLine";
 import CareerGrowth from "./CareerGrowth";
 import OnePlatform from "./OnePlatform";
+import StartyourCareer from "./Start-Your-Career";
+import Understand from "./Understand-where-stand";
+import WhyClear from "./Why-Clear";
 
 const HomeLayout = () => {
   return (
@@ -18,8 +21,9 @@ const HomeLayout = () => {
       <Clients />
       <CareerGrowth />
       <OnePlatform />
-      <CareerDeserve />
-      <CareersUncertain />
+      <StartyourCareer />
+      <Understand />
+      <WhyClear />
     </Box>
   );
 };

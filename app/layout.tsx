@@ -5,6 +5,7 @@ import Header from "@/components/widgets/Header";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import LayoutWrapper from "@/components/layouts/LayoutWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,8 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-        {children}
+        <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>
   );

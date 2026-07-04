@@ -8,7 +8,6 @@ import {
   ListItemText,
   Typography,
 } from "@mui/material";
-import React from "react";
 import { WHY_ELEVATR_CARD_PROPS } from "@/utils/types";
 import { COLORS } from "@/utils/enum";
 import { poppins } from "@/utils/fonts";

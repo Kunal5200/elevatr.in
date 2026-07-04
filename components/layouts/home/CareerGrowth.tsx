@@ -1,3 +1,4 @@
+import CustomList from "@/components/widgets/CustomList";
 import { COLORS } from "@/utils/enum";
 import { poppins, surgena } from "@/utils/fonts";
 import { Circle } from "@mui/icons-material";
@@ -61,31 +62,16 @@ const CareerGrowth = () => {
               >
                 Today, your career lives across dozens of tools.
               </Typography>
-              <List>
-                {listItems.map((val, i) => (
-                  <ListItem key={i} disablePadding>
-                    <ListItemAvatar sx={{ minWidth: 30 }}>
-                      <Circle
-                        sx={{ width: 10, height: 10, color: COLORS.GRAY }}
-                      />
-                    </ListItemAvatar>
-                    <ListItemText
-                      primary={val}
-                      slotProps={{
-                        primary: {
-                          sx: {
-                            fontFamily: surgena.style.fontFamily,
-                            color: COLORS.GRAY,
-                            fontSize: 26,
-                            fontWeight: 500,
-                            lineHeight: "36px",
-                          },
-                        },
-                      }}
-                    />
-                  </ListItem>
-                ))}
-              </List>
+              <CustomList
+                data={listItems}
+                typographyStyle={{
+                  fontFamily: surgena.style.fontFamily,
+                  color: COLORS.GRAY,
+                  fontSize: 26,
+                  fontWeight: 500,
+                  lineHeight: "36px",
+                }}
+              />
             </Box>
           </Grid>
 
