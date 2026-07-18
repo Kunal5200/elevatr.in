@@ -23,9 +23,10 @@ const FooterSocial = () => {
   ];
   return (
     <Stack
-      direction="row"
+      direction={{ lg: "row", xs: "column" }}
       alignItems={"center"}
       justifyContent={"space-between"}
+      spacing={{ xs: 3 }}
     >
       <Stack direction={"row"} alignItems={"center"} spacing={3}>
         <FilledButton

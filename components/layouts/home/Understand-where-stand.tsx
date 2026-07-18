@@ -41,10 +41,10 @@ const Understand = () => {
         </Typography>
         <Typography
           sx={{
-            fontSize: 128,
+            fontSize: { lg: 128, xs: 60 },
             fontFamily: poppins.style.fontFamily,
             fontWeight: 275,
-            lineHeight: "100px",
+            lineHeight: { lg: "100px", xs: "60px" },
             letterSpacing: "-7.68px",
             mt: 2,
           }}
@@ -52,24 +52,24 @@ const Understand = () => {
           Understand where
         </Typography>
         <Grid container sx={{ alignItems: "flex-end" }}>
-          <Grid size={7}>
+          <Grid size={{ lg: 7, xs: 12 }}>
             <Typography
               sx={{
-                fontSize: 128,
+                fontSize: { lg: 128, xs: 60 },
                 fontFamily: poppins.style.fontFamily,
                 fontWeight: 600,
-                lineHeight: "100px",
+                lineHeight: { lg: "100px", xs: "60px" },
                 letterSpacing: "-7.68px",
               }}
             >
               you stand.
             </Typography>
           </Grid>
-          <Grid size={5}>
+          <Grid size={{ lg: 5, xs: 12 }}>
             <Typography
               sx={{
                 color: COLORS.GRAY,
-                fontSize: 28,
+                fontSize: { lg: 28, xs: 16 },
                 fontFamily: poppins.style.fontFamily,
                 fontWeight: 400,
                 lineHeight: "37px",

@@ -22,7 +22,7 @@ const HeroSection2 = () => {
             sx={{
               textAlign: "center",
               fontFamily: surgena.style.fontFamily,
-              fontSize: 46,
+              fontSize: { lg: 46, xs: 30 },
               fontWeight: 600,
             }}
           >
@@ -37,9 +37,9 @@ const HeroSection2 = () => {
           </Box>
           <Typography
             sx={{
-              fontSize: 128,
+              fontSize: { lg: 128, xs: 60 },
               fontFamily: poppins.style.fontFamily,
-              lineHeight: "128px",
+              lineHeight: { lg: "128px", xs: "50px" },
               letterSpacing: "-7.68px",
               fontWeight: 275,
             }}
@@ -48,9 +48,9 @@ const HeroSection2 = () => {
             <Typography
               component={"span"}
               sx={{
-                fontSize: 128,
+                fontSize: { lg: 128, xs: 60 },
                 fontFamily: poppins.style.fontFamily,
-                lineHeight: "128px",
+                lineHeight: { lg: "128px", xs: "50px" },
                 letterSpacing: "-7.68px",
                 fontWeight: 500,
               }}
@@ -62,9 +62,9 @@ const HeroSection2 = () => {
             <Typography
               component={"span"}
               sx={{
-                fontSize: 128,
+                fontSize: { lg: 128, xs: 60 },
                 fontFamily: poppins.style.fontFamily,
-                lineHeight: "128px",
+                lineHeight: { lg: "128px", xs: "50px" },
                 letterSpacing: "-7.68px",
                 fontWeight: 700,
               }}
@@ -75,7 +75,7 @@ const HeroSection2 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: 28,
+              fontSize: { lg: 28, xs: 20 },
               lineHeight: "28px",
               letterSpacing: "-0.84px",
               fontFamily: poppins.style.fontFamily,
@@ -84,14 +84,14 @@ const HeroSection2 = () => {
           >
             (Built for what’s next)
           </Typography>
-          <Box sx={{ textAlign: "center" }}>
+          <Box sx={{ textAlign: "center", width: { lg: "100%", xs: 250 } }}>
             <Image src={abstract} alt="" />
           </Box>
         </Container>
       </Box>
       <Container maxWidth="lg">
         <Grid container>
-          <Grid size={8} margin="auto">
+          <Grid size={{ lg: 8, xs: 12 }} margin="auto">
             <StartCard />
           </Grid>
         </Grid>

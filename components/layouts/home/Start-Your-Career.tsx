@@ -34,7 +34,7 @@ const StartyourCareer = () => {
     >
       <Container maxWidth="lg">
         <Grid container alignItems="stretch">
-          <Grid size={7}>
+          <Grid size={{ lg: 7, xs: 12 }}>
             <Typography
               sx={{
                 fontFamily: poppins.style.fontFamily,
@@ -48,9 +48,9 @@ const StartyourCareer = () => {
             <Typography
               sx={{
                 fontFamily: poppins.style.fontFamily,
-                fontSize: 128,
+                fontSize: { lg: 128, xs: 60 },
                 fontWeight: 700,
-                lineHeight: "120px",
+                lineHeight: { lg: "120px", xs: "70px" },
                 letterSpacing: "-7.68px",
               }}
             >
@@ -58,9 +58,9 @@ const StartyourCareer = () => {
               <Typography
                 sx={{
                   fontFamily: poppins.style.fontFamily,
-                  fontSize: 128,
+                  fontSize: { lg: 128, xs: 60 },
                   fontWeight: 275,
-                  lineHeight: "120px",
+                  lineHeight: { lg: "120px", xs: "70px" },
                   letterSpacing: "-7.68px",
                 }}
                 component={"span"}
@@ -71,9 +71,9 @@ const StartyourCareer = () => {
             <Typography
               sx={{
                 fontFamily: poppins.style.fontFamily,
-                fontSize: 128,
+                fontSize: { lg: 128, xs: 60 },
                 fontWeight: 275,
-                lineHeight: "120px",
+                lineHeight: { lg: "120px", xs: "70px" },
                 letterSpacing: "-7.68px",
               }}
             >
@@ -82,9 +82,9 @@ const StartyourCareer = () => {
                 component={"span"}
                 sx={{
                   fontFamily: poppins.style.fontFamily,
-                  fontSize: 128,
+                  fontSize: { lg: 128, xs: 60 },
                   fontWeight: 700,
-                  lineHeight: "120px",
+                  lineHeight: { lg: "120px", xs: "70px" },
                   letterSpacing: "-7.68px",
                 }}
               >
@@ -94,9 +94,9 @@ const StartyourCareer = () => {
             <Typography
               sx={{
                 fontFamily: poppins.style.fontFamily,
-                fontSize: 128,
+                fontSize: { lg: 128, xs: 60 },
                 fontWeight: 700,
-                lineHeight: "120px",
+                lineHeight: { lg: "120px", xs: "70px" },
                 letterSpacing: "-7.68px",
               }}
             >
@@ -104,47 +104,11 @@ const StartyourCareer = () => {
             </Typography>
           </Grid>
           <Grid
-            size={5}
+            size={{ lg: 5, xs: 12 }}
             sx={{
               position: "relative",
             }}
           >
-            {/* <List sx={{ display: "flex", flexDirection: "column" }}>
-              {data.map((item, index) => (
-                <ListItem
-                  sx={{ justifyContent: "flex-end" }}
-                  key={index}
-                  disablePadding
-                >
-                  <ListItemAvatar
-                    sx={{
-                      minWidth: "auto",
-                      mr: 1.5,
-                      display: "flex",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Circle
-                      sx={{ color: COLORS.GRAY, width: 10, height: 10 }}
-                    />
-                  </ListItemAvatar>
-                  <ListItemText
-                    primary={item}
-                    sx={{ flex: "none" }}
-                    slotProps={{
-                      primary: {
-                        sx: {
-                          fontFamily: poppins.style.fontFamily,
-                          fontSize: 20,
-                          fontWeight: 500,
-                          lineHeight: "37px",
-                        },
-                      },
-                    }}
-                  />
-                </ListItem>
-              ))}
-            </List> */}
             <Box
               sx={{
                 display: "flex",
@@ -166,7 +130,7 @@ const StartyourCareer = () => {
               sx={{
                 display: "flex",
                 justifyContent: "flex-end",
-                position: "absolute",
+                position: { lg: "absolute", xs: "relative" },
                 bottom: 0,
                 right: 0,
               }}

@@ -17,17 +17,17 @@ const StartCard = () => {
           justifyContent: "space-between",
         }}
       >
-        <Box>
+        <Box sx={{ width: { lg: "100%", xs: "50%" } }}>
           <Image src={motion} alt="motion" />
         </Box>
-        <Box sx={{ pr: 3 }}>
+        <Box sx={{ pr: { lg: 3, xs: 1 } }}>
           <Typography
             sx={{
               textAlign: "right",
               fontFamily: surgena.style.fontFamily,
               fontWeight: 600,
               color: "#272B27",
-              fontSize: 26,
+              fontSize: { lg: 26, xs: 15 },
             }}
           >
             Start with Elevatr
@@ -35,9 +35,9 @@ const StartCard = () => {
           <Typography
             sx={{
               color: "#4E4E4E",
-              fontSize: 21,
+              fontSize: { lg: 21, xs: 12 },
               fontFamily: poppins.style.fontFamily,
-              width: 432,
+              width: { lg: 432, xs: "100%" },
               marginLeft: "auto",
               textAlign: "right",
             }}

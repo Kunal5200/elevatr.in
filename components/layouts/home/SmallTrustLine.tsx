@@ -17,10 +17,10 @@ const SmallTrustLine = () => {
       <Container maxWidth="lg">
         <Typography
           sx={{
-            fontSize: 128,
+            fontSize: { lg: 128, xs: 60 },
             fontFamily: poppins.style.fontFamily,
             fontWeight: 275,
-            lineHeight: "52px",
+            lineHeight: { lg: "52px", xs: "30px" },
             letterSpacing: "-6px",
           }}
         >
@@ -28,10 +28,10 @@ const SmallTrustLine = () => {
           <Typography
             component={"span"}
             sx={{
-              fontSize: 128,
+              fontSize: { lg: 128, xs: 60 },
               fontFamily: poppins.style.fontFamily,
               fontWeight: 700,
-              lineHeight: "52px",
+              lineHeight: { lg: "52px", xs: "30px" },
               letterSpacing: "-6px",
             }}
           >
@@ -40,12 +40,12 @@ const SmallTrustLine = () => {
         </Typography>
 
         <Grid container sx={{ mt: 7 }}>
-          <Grid size={8}>
+          <Grid size={{ lg: 8, xs: 12 }}>
             <Typography
               sx={{
                 fontFamily: surgena.style.fontFamily,
                 color: COLORS.GRAY,
-                fontSize: 26,
+                fontSize: { lg: 26, xs: 20 },
                 fontWeight: 500,
                 lineHeight: "30px",
               }}
@@ -54,7 +54,7 @@ const SmallTrustLine = () => {
               clarity, not guesswork.
             </Typography>
           </Grid>
-          <Grid size={4} sx={{ textAlign: "right" }}>
+          <Grid size={{ lg: 4, xs: 12 }} sx={{ textAlign: "right" }}>
             <FilledButton
               sx={{
                 color: COLORS.WHITE,

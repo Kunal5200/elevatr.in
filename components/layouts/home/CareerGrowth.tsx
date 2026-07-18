@@ -27,10 +27,10 @@ const CareerGrowth = () => {
       <Container maxWidth="lg">
         <Typography
           sx={{
-            fontSize: 128,
+            fontSize: { lg: 128, xs: 60 },
             fontWeight: 275,
             fontFamily: poppins.style.fontFamily,
-            lineHeight: "128px",
+            lineHeight: { lg: "128px", xs: "60px" },
             letterSpacing: "-7.68px",
           }}
         >
@@ -38,10 +38,10 @@ const CareerGrowth = () => {
           <Typography
             component={"span"}
             sx={{
-              fontSize: 128,
+              fontSize: { lg: 128, xs: 60 },
               fontWeight: 700,
               fontFamily: poppins.style.fontFamily,
-              lineHeight: "128px",
+              lineHeight: { lg: "128px", xs: "60px" },
               letterSpacing: "-7.68px",
             }}
           >
@@ -49,11 +49,11 @@ const CareerGrowth = () => {
           </Typography>
         </Typography>
         <Grid container sx={{ mt: 8 }} spacing={4}>
-          <Grid size={6}>
-            <Box sx={{ width: 500 }}>
+          <Grid size={{ lg: 6, xs: 12 }}>
+            <Box sx={{ width: { lg: 500, xs: "100%" } }}>
               <Typography
                 sx={{
-                  fontSize: 26,
+                  fontSize: { lg: 26, xs: 20 },
                   fontFamily: surgena.style.fontFamily,
                   color: COLORS.GRAY,
                   fontWeight: 500,
@@ -67,7 +67,7 @@ const CareerGrowth = () => {
                 typographyStyle={{
                   fontFamily: surgena.style.fontFamily,
                   color: COLORS.GRAY,
-                  fontSize: 26,
+                  fontSize: { lg: 26, xs: 20 },
                   fontWeight: 500,
                   lineHeight: "36px",
                 }}
@@ -75,13 +75,13 @@ const CareerGrowth = () => {
             </Box>
           </Grid>
 
-          <Grid size={6}>
+          <Grid size={{ lg: 6, xs: 12 }}>
             <Typography
               sx={{
-                fontSize: 128,
+                fontSize: { lg: 128, xs: 60 },
                 fontWeight: 275,
                 fontFamily: poppins.style.fontFamily,
-                lineHeight: "128px",
+                lineHeight: { lg: "128px", xs: "80px" },
                 letterSpacing: "-7.68px",
                 textAlign: "left",
               }}
@@ -90,10 +90,10 @@ const CareerGrowth = () => {
               <Typography
                 component={"span"}
                 sx={{
-                  fontSize: 128,
+                  fontSize: { lg: 128, xs: 60 },
                   fontWeight: 700,
                   fontFamily: poppins.style.fontFamily,
-                  lineHeight: "128px",
+                  lineHeight: { lg: "128px", xs: "80px" },
                   letterSpacing: "-7.68px",
                 }}
               >
@@ -103,7 +103,7 @@ const CareerGrowth = () => {
             <Typography
               sx={{
                 fontFamily: surgena.style.fontFamily,
-                fontSize: 26,
+                fontSize: { lg: 26, xs: 20 },
                 fontWeight: 500,
                 lineHeight: "36px",
                 color: COLORS.GRAY,

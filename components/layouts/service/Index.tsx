@@ -8,10 +8,11 @@ import Steps from "./Steps";
 import Skills from "./Skills";
 import WhyElevatr from "../../widgets/Why-Elevatr";
 import Careers from "./Careers";
+import { Box } from "@mui/material";
 
 const ServiceLayout = () => {
   return (
-    <div>
+    <Box>
       <ServiceHeroSection />
       <ProductSlide />
       <CareerSystem />
@@ -20,7 +21,7 @@ const ServiceLayout = () => {
       <Skills />
       <WhyElevatr />
       <Careers />
-    </div>
+    </Box>
   );
 };
 

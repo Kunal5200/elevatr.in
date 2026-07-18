@@ -1,6 +1,6 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
-import product1 from "@/images/products/product_first_look.png";
+import product1 from "@/images/products/the_product.png";
 import Image from "next/image";
 import { poppins } from "@/utils/fonts";
 import { COLORS } from "@/utils/enum";

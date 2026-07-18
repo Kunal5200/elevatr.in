@@ -10,13 +10,13 @@ const WhyClear = () => {
     <Box>
       <Container maxWidth="lg">
         <Grid container alignItems={"center"} spacing={2}>
-          <Grid size={7}>
+          <Grid size={{ lg: 7, xs: 12 }}>
             <Typography
               sx={{
                 fontFamily: poppins.style.fontFamily,
-                fontSize: 125,
+                fontSize: { lg: 125, xs: 60 },
                 fontWeight: 275,
-                lineHeight: "128px",
+                lineHeight: { lg: "128px", xs: "70px" },
                 letterSpacing: "-7.68px",
               }}
             >
@@ -24,9 +24,9 @@ const WhyClear = () => {
               <Typography
                 sx={{
                   fontFamily: poppins.style.fontFamily,
-                  fontSize: 125,
+                  fontSize: { lg: 125, xs: 60 },
                   fontWeight: 700,
-                  lineHeight: "128px",
+                  lineHeight: { lg: "128px", xs: "70px" },
                   letterSpacing: "-7.68px",
                 }}
                 component={"span"}
@@ -35,10 +35,10 @@ const WhyClear = () => {
               </Typography>
             </Typography>
           </Grid>
-          <Grid size={5}>
+          <Grid size={{ lg: 5, xs: 12 }}>
             <Typography
               sx={{
-                fontSize: 28,
+                fontSize: { lg: 28, xs: 16 },
                 fontFamily: poppins.style.fontFamily,
                 color: COLORS.GRAY,
                 fontWeight: 400,
@@ -50,7 +50,7 @@ const WhyClear = () => {
         </Grid>
         <Grid container spacing={2} sx={{ mt: 3 }}>
           {WHY_ELEVATR_CARD_DATA.map((val, i) => (
-            <Grid size={6} key={i}>
+            <Grid size={{ lg: 6, xs: 12 }} key={i}>
               <WhyElevatrCard
                 isEven={val.isEven}
                 title={val.title}

@@ -2,7 +2,8 @@ import { COLORS } from "@/utils/enum";
 import { poppins, surgena } from "@/utils/fonts";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
-
+import journey from "@/images/banner/platform-journey.png";
+import Image from "next/image";
 const OnePlatform = () => {
   return (
     <Box
@@ -16,8 +17,12 @@ const OnePlatform = () => {
     >
       <Container maxWidth="lg">
         <Grid container>
-          <Grid size={5}></Grid>
-          <Grid size={7}>
+          <Grid size={{ lg: 5, xs: 12 }}>
+            <Box>
+              <Image src={journey} alt="" />
+            </Box>
+          </Grid>
+          <Grid size={{ lg: 7, xs: 12 }}>
             <Typography
               sx={{
                 fontFamily: surgena.style.fontFamily,
@@ -34,9 +39,9 @@ const OnePlatform = () => {
               sx={{
                 color: COLORS.BLACK,
                 fontWeight: 275,
-                fontSize: 110,
+                fontSize: { lg: 110, xs: 60 },
                 fontFamily: poppins.style.fontFamily,
-                lineHeight: "108px",
+                lineHeight: { lg: "108px", xs: "60px" },
                 letterSpacing: "-7.68px",
               }}
             >
@@ -46,9 +51,9 @@ const OnePlatform = () => {
                 sx={{
                   color: COLORS.BLACK,
                   fontWeight: 700,
-                  fontSize: 128,
+                  fontSize: { lg: 128, xs: 60 },
                   fontFamily: poppins.style.fontFamily,
-                  lineHeight: "108px",
+                  lineHeight: { lg: "108px", xs: "60px" },
                   letterSpacing: "-7.68px",
                 }}
               >
