@@ -17,29 +17,29 @@ const SmallTrustLine = () => {
       <Container maxWidth="lg">
         <Typography
           sx={{
-            fontSize: { lg: 128, xs: 60 },
+            fontSize: { lg: 128, xs: 40 },
             fontFamily: poppins.style.fontFamily,
             fontWeight: 275,
             lineHeight: { lg: "52px", xs: "30px" },
-            letterSpacing: "-6px",
+            letterSpacing: { lg: "-6px", xs: "-1px" },
           }}
         >
           Small{" "}
           <Typography
             component={"span"}
             sx={{
-              fontSize: { lg: 128, xs: 60 },
+              fontSize: { lg: 128, xs: 40 },
               fontFamily: poppins.style.fontFamily,
               fontWeight: 700,
               lineHeight: { lg: "52px", xs: "30px" },
-              letterSpacing: "-6px",
+              letterSpacing: { lg: "-6px", xs: "-1px" },
             }}
           >
             trust line
           </Typography>{" "}
         </Typography>
 
-        <Grid container sx={{ mt: 7 }}>
+        <Grid container sx={{ mt: { lg: 7, xs: 3 } }}>
           <Grid size={{ lg: 8, xs: 12 }}>
             <Typography
               sx={{

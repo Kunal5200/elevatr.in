@@ -1,11 +1,13 @@
+"use client";
 import { poppins, surgena } from "@/utils/fonts";
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 import logo from "@/images/logo/logo.png";
 import Image from "next/image";
 import abstract from "@/images/banner/abstract.png";
 import StartCard from "./components/Start-Card";
 const HeroSection2 = () => {
+  const phone = useMediaQuery("(max-width:600px)");
   return (
     <Box>
       <Box
@@ -22,7 +24,7 @@ const HeroSection2 = () => {
             sx={{
               textAlign: "center",
               fontFamily: surgena.style.fontFamily,
-              fontSize: { lg: 46, xs: 30 },
+              fontSize: { lg: 46, xs: 20 },
               fontWeight: 600,
             }}
           >
@@ -37,10 +39,10 @@ const HeroSection2 = () => {
           </Box>
           <Typography
             sx={{
-              fontSize: { lg: 128, xs: 60 },
+              fontSize: { lg: 128, xs: 40 },
               fontFamily: poppins.style.fontFamily,
               lineHeight: { lg: "128px", xs: "50px" },
-              letterSpacing: "-7.68px",
+              letterSpacing: { lg: "-7.68px", xs: "-1px" },
               fontWeight: 275,
             }}
           >
@@ -48,10 +50,10 @@ const HeroSection2 = () => {
             <Typography
               component={"span"}
               sx={{
-                fontSize: { lg: 128, xs: 60 },
+                fontSize: { lg: 128, xs: 40 },
                 fontFamily: poppins.style.fontFamily,
                 lineHeight: { lg: "128px", xs: "50px" },
-                letterSpacing: "-7.68px",
+                letterSpacing: { lg: "-7.68px", xs: "-1px" },
                 fontWeight: 500,
               }}
             >
@@ -62,10 +64,10 @@ const HeroSection2 = () => {
             <Typography
               component={"span"}
               sx={{
-                fontSize: { lg: 128, xs: 60 },
+                fontSize: { lg: 128, xs: 40 },
                 fontFamily: poppins.style.fontFamily,
                 lineHeight: { lg: "128px", xs: "50px" },
-                letterSpacing: "-7.68px",
+                letterSpacing: { lg: "-7.68px", xs: "-1px" },
                 fontWeight: 700,
               }}
             >
@@ -84,8 +86,15 @@ const HeroSection2 = () => {
           >
             (Built for what’s next)
           </Typography>
-          <Box sx={{ textAlign: "center", width: { lg: "100%", xs: 250 } }}>
-            <Image src={abstract} alt="" />
+          <Box sx={{ textAlign: "center" }}>
+            <Image
+              src={abstract}
+              alt=""
+              style={{
+                width: phone ? "300px" : "500px",
+                height: phone ? "auto" : "100%",
+              }}
+            />
           </Box>
         </Container>
       </Box>

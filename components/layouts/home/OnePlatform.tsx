@@ -26,7 +26,7 @@ const OnePlatform = () => {
             <Typography
               sx={{
                 fontFamily: surgena.style.fontFamily,
-                fontSize: 26,
+                fontSize: { lg: 26, xs: 18 },
                 color: COLORS.GRAY,
                 fontWeight: 500,
                 lineHeight: "36px",
@@ -39,10 +39,10 @@ const OnePlatform = () => {
               sx={{
                 color: COLORS.BLACK,
                 fontWeight: 275,
-                fontSize: { lg: 110, xs: 60 },
+                fontSize: { lg: 110, xs: 40 },
                 fontFamily: poppins.style.fontFamily,
-                lineHeight: { lg: "108px", xs: "60px" },
-                letterSpacing: "-7.68px",
+                lineHeight: { lg: "108px", xs: "50px" },
+                letterSpacing: { lg: "-7.68px", xs: "-1px" },
               }}
             >
               One platform,{" "}
@@ -51,10 +51,10 @@ const OnePlatform = () => {
                 sx={{
                   color: COLORS.BLACK,
                   fontWeight: 700,
-                  fontSize: { lg: 128, xs: 60 },
+                  fontSize: { lg: 128, xs: 40 },
                   fontFamily: poppins.style.fontFamily,
-                  lineHeight: { lg: "108px", xs: "60px" },
-                  letterSpacing: "-7.68px",
+                  lineHeight: { lg: "108px", xs: "50px" },
+                  letterSpacing: { lg: "-7.68px", xs: "-1px" },
                 }}
               >
                 The entire journey.
@@ -64,11 +64,11 @@ const OnePlatform = () => {
               sx={{
                 fontFamily: surgena.style.fontFamily,
                 fontWeight: 500,
-                fontSize: 20,
-                lineHeight: "36px",
+                fontSize: { lg: 20, xs: 18 },
+                lineHeight: { lg: "36px", xs: "30px" },
                 textAlign: "left",
                 color: COLORS.GRAY,
-                mt: 8,
+                mt: { lg: 8, xs: 3 },
               }}
             >
               Elevatr connects every stage of career growth into a single
@@ -79,9 +79,9 @@ const OnePlatform = () => {
                 color: COLORS.GRAY,
                 fontFamily: surgena.style.fontFamily,
                 fontWeight: 600,
-                fontSize: 24,
-                lineHeight: "36px",
-                mt: 5,
+                fontSize: { lg: 24, xs: 12 },
+                lineHeight: { lg: "36px", xs: "25px" },
+                mt: { lg: 5, xs: 3 },
               }}
             >
               Resume → Skills → Readiness → Opportunities → Growth

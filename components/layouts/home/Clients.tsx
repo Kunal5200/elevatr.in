@@ -32,11 +32,11 @@ const Clients = () => {
           <Grid size={12} margin={"auto"}>
             <Typography
               sx={{
-                fontSize: 22,
+                fontSize: { lg: 22, xs: 14 },
                 textAlign: "center",
                 fontFamily: poppins.style.fontFamily,
                 color: "#646464",
-                mb: 6,
+                mb: { lg: 6, xs: 3 },
               }}
             >
               It comes from moving with clarity. Replace chaos with structure,

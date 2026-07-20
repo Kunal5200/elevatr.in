@@ -1,9 +1,11 @@
+"use client";
 import { poppins, surgena } from "@/utils/fonts";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 import motion from "@/images/banner/motion.png";
 import Image from "next/image";
 const StartCard = () => {
+  const phone = useMediaQuery("(max-width:600px)");
   return (
     <Box>
       <Box
@@ -12,15 +14,15 @@ const StartCard = () => {
           boxShadow: "0 1px 4px 0 rgba(0, 0, 0, 0.09)",
           borderRadius: "10px",
           // p: "30px",
-          display: "flex",
+          display: { lg: "flex", xs: "block" },
           alignItems: "center",
           justifyContent: "space-between",
         }}
       >
-        <Box sx={{ width: { lg: "100%", xs: "50%" } }}>
-          <Image src={motion} alt="motion" />
+        <Box>
+          <Image src={motion} alt="motion" style={{ width: "100%" }} />
         </Box>
-        <Box sx={{ pr: { lg: 3, xs: 1 } }}>
+        <Box sx={{ pr: { lg: 3, xs: 1 }, p: { xs: 2 } }}>
           <Typography
             sx={{
               textAlign: "right",

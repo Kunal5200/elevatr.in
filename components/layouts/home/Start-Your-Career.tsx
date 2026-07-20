@@ -12,6 +12,7 @@ import {
   ListItem,
   ListItemAvatar,
   ListItemText,
+  Stack,
   Typography,
 } from "@mui/material";
 import React from "react";
@@ -38,70 +39,72 @@ const StartyourCareer = () => {
             <Typography
               sx={{
                 fontFamily: poppins.style.fontFamily,
-                fontSize: 28,
+                fontSize: { lg: 28, xs: 18 },
                 fontWeight: 500,
-                lineHeight: "37px",
+                lineHeight: { lg: "37px", xs: "30px" },
               }}
             >
               What You Get (Today)
             </Typography>
-            <Typography
-              sx={{
-                fontFamily: poppins.style.fontFamily,
-                fontSize: { lg: 128, xs: 60 },
-                fontWeight: 700,
-                lineHeight: { lg: "120px", xs: "70px" },
-                letterSpacing: "-7.68px",
-              }}
-            >
-              Start{" "}
+            <Stack direction={{ lg: "column", xs: "row" }}>
               <Typography
                 sx={{
                   fontFamily: poppins.style.fontFamily,
-                  fontSize: { lg: 128, xs: 60 },
-                  fontWeight: 275,
-                  lineHeight: { lg: "120px", xs: "70px" },
-                  letterSpacing: "-7.68px",
-                }}
-                component={"span"}
-              >
-                with
-              </Typography>
-            </Typography>
-            <Typography
-              sx={{
-                fontFamily: poppins.style.fontFamily,
-                fontSize: { lg: 128, xs: 60 },
-                fontWeight: 275,
-                lineHeight: { lg: "120px", xs: "70px" },
-                letterSpacing: "-7.68px",
-              }}
-            >
-              your{" "}
-              <Typography
-                component={"span"}
-                sx={{
-                  fontFamily: poppins.style.fontFamily,
-                  fontSize: { lg: 128, xs: 60 },
+                  fontSize: { lg: 128, xs: 40 },
                   fontWeight: 700,
-                  lineHeight: { lg: "120px", xs: "70px" },
-                  letterSpacing: "-7.68px",
+                  lineHeight: { lg: "120px", xs: "50px" },
+                  letterSpacing: { lg: "-7.68px", xs: "-1px" },
                 }}
               >
-                career
+                Start{"    "}
+                <Typography
+                  sx={{
+                    fontFamily: poppins.style.fontFamily,
+                    fontSize: { lg: 128, xs: 40 },
+                    fontWeight: 275,
+                    lineHeight: { lg: "120px", xs: "50px" },
+                    letterSpacing: { lg: "-7.68px", xs: "-1px" },
+                  }}
+                  component={"span"}
+                >
+                  with
+                </Typography>
               </Typography>
-            </Typography>
-            <Typography
-              sx={{
-                fontFamily: poppins.style.fontFamily,
-                fontSize: { lg: 128, xs: 60 },
-                fontWeight: 700,
-                lineHeight: { lg: "120px", xs: "70px" },
-                letterSpacing: "-7.68px",
-              }}
-            >
-              identity.
-            </Typography>
+              <Typography
+                sx={{
+                  fontFamily: poppins.style.fontFamily,
+                  fontSize: { lg: 128, xs: 40 },
+                  fontWeight: 275,
+                  lineHeight: { lg: "120px", xs: "50px" },
+                  letterSpacing: { lg: "-7.68px", xs: "-1px" },
+                }}
+              >
+                your{" "}
+                <Typography
+                  component={"span"}
+                  sx={{
+                    fontFamily: poppins.style.fontFamily,
+                    fontSize: { lg: 128, xs: 40 },
+                    fontWeight: 700,
+                    lineHeight: { lg: "120px", xs: "50px" },
+                    letterSpacing: { lg: "-7.68px", xs: "-1px" },
+                  }}
+                >
+                  career
+                </Typography>
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: poppins.style.fontFamily,
+                  fontSize: { lg: 128, xs: 40 },
+                  fontWeight: 700,
+                  lineHeight: { lg: "120px", xs: "50px" },
+                  letterSpacing: { lg: "-7.68px", xs: "-1px" },
+                }}
+              >
+                identity.
+              </Typography>
+            </Stack>
           </Grid>
           <Grid
             size={{ lg: 5, xs: 12 }}
