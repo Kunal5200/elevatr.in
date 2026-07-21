@@ -8,26 +8,27 @@ const ProductSlide = () => {
   return (
     <Box
       sx={{
-        height: "100vh",
+        height: { lg: "100vh", xs: "auto" },
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        py: { xs: 4 },
       }}
     >
       <Container maxWidth="lg">
         <Grid container spacing={5} alignItems={"flex-end"}>
-          <Grid size={8}>
+          <Grid size={{ lg: 8, xs: 12 }}>
             <Image
               src={product1}
               alt="product1"
               style={{ width: "100%", height: "auto", borderRadius: "20px" }}
             />
           </Grid>{" "}
-          <Grid size={4}>
+          <Grid size={{ lg: 4, xs: 12 }}>
             <Typography
               sx={{
                 fontFamily: poppins.style.fontFamily,
-                fontSize: 36,
+                fontSize: { lg: 36, xs: 24 },
                 fontWeight: 700,
                 lineHeight: "52px",
               }}
@@ -37,7 +38,7 @@ const ProductSlide = () => {
             <Typography
               sx={{
                 fontFamily: poppins.style.fontFamily,
-                fontSize: 20,
+                fontSize: { lg: 20, xs: 18 },
                 fontWeight: 400,
                 lineHeight: "30px",
                 color: COLORS.PRIMARY,

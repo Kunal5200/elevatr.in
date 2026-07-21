@@ -25,21 +25,22 @@ const ServiceHeroSection = () => {
     <Box>
       <Box
         sx={{
-          height: "100vh",
+          height: { lg: "100vh", xs: "auto" },
           display: "flex",
           alignItems: "center",
           justifyContent: "flex-start",
+          py: { xs: 6 },
         }}
       >
         <Container maxWidth="lg">
           <Grid container>
-            <Grid size={10}>
+            <Grid size={{ lg: 10, xs: 12 }}>
               <Typography
                 sx={{
-                  fontSize: 120,
+                  fontSize: { lg: 120, xs: 40 },
                   fontFamily: poppins.style.fontFamily,
-                  lineHeight: "100px",
-                  letterSpacing: "-7.68px",
+                  lineHeight: { lg: "100px", xs: "40px" },
+                  letterSpacing: { lg: "-7.68px", xs: "-1px" },
                   fontWeight: 500,
                 }}
               >
@@ -53,7 +54,7 @@ const ServiceHeroSection = () => {
                       primary={val}
                       slotProps={{
                         primary: {
-                          fontSize: 24,
+                          fontSize: { lg: 24, xs: 18 },
                           fontFamily: surgena.style.fontFamily,
                           lineHeight: "36px",
                         },
@@ -62,12 +63,18 @@ const ServiceHeroSection = () => {
                   </ListItem>
                 ))}
               </List>
-              <Stack direction={"row"} alignItems={"center"} spacing={4} mt={4}>
+              <Stack
+                direction={{ lg: "row", xs: "column" }}
+                alignItems={{ lg: "center", xs: "flex-start" }}
+                spacing={4}
+                mt={4}
+              >
                 <FilledButton
                   sx={{
                     borderRadius: "50px",
                     p: "0px 32px 0px 26px",
                     // width: "20px",
+                    width: { lg: "auto", xs: "100%" },
                   }}
                 >
                   <Stack direction={"row"} alignItems={"center"} spacing={2}>
@@ -90,7 +97,7 @@ const ServiceHeroSection = () => {
                   sx={{
                     borderRadius: "50px",
                     p: "0px 11px 0 12px",
-                    width: 250,
+                    width: { lg: 250, xs: "100%" },
                   }}
                 >
                   <Typography

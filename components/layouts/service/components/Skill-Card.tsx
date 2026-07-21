@@ -17,8 +17,8 @@ const SkillCard = ({
     <Box
       sx={{
         position: "relative",
-        width: "100%",
-        height: 446,
+        width: { lg: "100%", xs: "250px" },
+        height: { lg: 446, xs: 300 },
         borderRadius: "28px",
         backgroundColor: "#F5F5F7",
         overflow: "hidden",
@@ -27,15 +27,16 @@ const SkillCard = ({
         alignItems: "center",
         pt: "40px",
         px: "24px",
+        mx: { xs: "auto" },
       }}
     >
       <Typography
         sx={{
           fontFamily: poppins.style.fontFamily,
           color: "#1D1D1F",
-          fontSize: "26px",
+          fontSize: { lg: "26px", xs: "18px" },
           fontWeight: 700,
-          lineHeight: "32px",
+          lineHeight: { lg: "32px", xs: "20px" },
           textAlign: "center",
         }}
       >
@@ -43,7 +44,7 @@ const SkillCard = ({
       </Typography>
       <Typography
         sx={{
-          fontSize: "16px",
+          fontSize: { lg: "16px", xs: "12px" },
           fontFamily: poppins.style.fontFamily,
           color: COLORS.PRIMARY,
           mt: "8px",
@@ -64,9 +65,9 @@ const SkillCard = ({
           p: "10px 24px",
           borderRadius: "100px",
           fontFamily: poppins.style.fontFamily,
-          fontSize: "15px",
+          fontSize: { lg: "15px", xs: "12px" },
           fontWeight: 600,
-          mt: "20px",
+          mt: { lg: "20px", xs: "10px" },
           textTransform: "none",
           boxShadow: "none",
           transition: "all 0.2s ease-in-out",
@@ -86,7 +87,7 @@ const SkillCard = ({
           bottom: "-15px",
           left: 0,
           right: 0,
-          height: "220px",
+          height: { lg: "220px", xs: "150px" },
           display: "flex",
           justifyContent: "center",
           alignItems: "flex-end",

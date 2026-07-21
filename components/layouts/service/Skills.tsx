@@ -14,26 +14,28 @@ const Skills = () => {
   return (
     <Box
       sx={{
-        mt: 20,
-        height: "100vh",
+        mt: { lg: 10, xs: 5 },
+        height: { lg: "100vh", xs: "auto" },
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        pb: { xs: 5 },
       }}
     >
       <Container maxWidth="lg">
         <Stack
-          direction={"row"}
-          alignItems={"flex-end"}
+          direction={{ lg: "row", xs: "column" }}
+          alignItems={{ lg: "flex-end", xs: "flex-start" }}
           justifyContent={"space-between"}
+          spacing={2}
         >
           <Box>
             <Typography
               sx={{
-                fontSize: 36,
+                fontSize: { lg: 36, xs: 28 },
                 fontWeight: 700,
                 fontFamily: poppins.style.fontFamily,
-                width: 237,
+                width: { lg: 237, xs: "100%" },
               }}
             >
               Product Breakdown
@@ -70,8 +72,24 @@ const Skills = () => {
             onSwiper={(swiper) => {
               swiperRef.current = swiper;
             }}
-            spaceBetween={80}
-            slidesPerView={3}
+            breakpoints={{
+              1200: {
+                spaceBetween: 80,
+                slidesPerView: 3,
+              },
+              900: {
+                spaceBetween: 60,
+                slidesPerView: 2,
+              },
+              600: {
+                spaceBetween: 40,
+                slidesPerView: 1,
+              },
+              0: {
+                spaceBetween: 20,
+                slidesPerView: 1,
+              },
+            }}
           >
             {SKILLS_CARD_DATA.map((val, i) => (
               <SwiperSlide key={i}>

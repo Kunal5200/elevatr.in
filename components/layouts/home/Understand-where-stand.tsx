@@ -21,10 +21,11 @@ const Understand = () => {
   return (
     <Box
       sx={{
-        height: "100vh",
+        height: { lg: "100vh", xs: "auto" },
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        py: { xs: 4 },
       }}
     >
       <Container maxWidth="lg">
@@ -41,11 +42,11 @@ const Understand = () => {
         </Typography>
         <Typography
           sx={{
-            fontSize: { lg: 128, xs: 60 },
+            fontSize: { lg: 128, xs: 40 },
             fontFamily: poppins.style.fontFamily,
             fontWeight: 275,
-            lineHeight: { lg: "100px", xs: "60px" },
-            letterSpacing: "-7.68px",
+            lineHeight: { lg: "100px", xs: "50px" },
+            letterSpacing: { lg: "-7.68px", xs: "-1px" },
             mt: 2,
           }}
         >
@@ -55,11 +56,11 @@ const Understand = () => {
           <Grid size={{ lg: 7, xs: 12 }}>
             <Typography
               sx={{
-                fontSize: { lg: 128, xs: 60 },
+                fontSize: { lg: 128, xs: 40 },
                 fontFamily: poppins.style.fontFamily,
                 fontWeight: 600,
-                lineHeight: { lg: "100px", xs: "60px" },
-                letterSpacing: "-7.68px",
+                lineHeight: { lg: "100px", xs: "50px" },
+                letterSpacing: { lg: "-7.68px", xs: "-1px" },
               }}
             >
               you stand.
@@ -79,15 +80,15 @@ const Understand = () => {
             </Typography>
           </Grid>
         </Grid>
-        <Box sx={{ mt: 5 }}>
+        <Box sx={{ mt: { lg: 5, xs: 2 } }}>
           <CustomList
             data={data}
             typographyStyle={{
               color: COLORS.GRAY,
               fontFamily: poppins.style.fontFamily,
-              fontSize: 28,
+              fontSize: { lg: 28, xs: 16 },
               fontWeight: 500,
-              lineHeight: "37px",
+              lineHeight: { lg: "37px", xs: "24px" },
             }}
           />
         </Box>

@@ -10,58 +10,67 @@ const Careers = () => {
   return (
     <Box
       sx={{
-        height: "100vh",
+        height: { lg: "100vh", xs: "auto" },
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        pb: { xs: 5 },
       }}
     >
       <Container maxWidth="lg">
         <Typography
           sx={{
             fontFamily: surgena.style.fontFamily,
-            fontSize: 24,
+            fontSize: { lg: 24, xs: 18 },
             fontWeight: 600,
-            lineHeight: "36px",
+            lineHeight: { lg: "36px", xs: "25px" },
           }}
         >
           “Elevatr brings structure to the entire journey.”
         </Typography>
         <Typography
           sx={{
-            fontSize: 128,
+            fontSize: { lg: 128, xs: 40 },
             fontFamily: poppins.style.fontFamily,
-            letterSpacing: "-7.68px",
+            letterSpacing: { lg: "-7.68px", xs: "-1px" },
             fontWeight: 500,
-            lineHeight: "130px",
+            lineHeight: { lg: "130px", xs: "45px" },
           }}
         >
           Careers aren’t built in one step.
         </Typography>
         <Typography
           sx={{
-            fontSize: 128,
+            fontSize: { lg: 128, xs: 40 },
             fontFamily: poppins.style.fontFamily,
-            letterSpacing: "-7.68px",
+            letterSpacing: { lg: "-7.68px", xs: "-1px" },
             fontWeight: 500,
-            lineHeight: "130px",
+            lineHeight: { lg: "130px", xs: "45px" },
           }}
         >
           They’re built in
         </Typography>
-        <Stack direction={"row"} alignItems={"flex-end"} spacing={3}>
+        <Stack
+          direction={{ lg: "row", xs: "column" }}
+          alignItems={{ lg: "flex-end", xs: "flex-start" }}
+          spacing={3}
+        >
           <Typography
             sx={{
-              fontSize: 128,
+              fontSize: { lg: 128, xs: 40 },
               fontFamily: poppins.style.fontFamily,
-              letterSpacing: "-7.68px",
+              letterSpacing: { lg: "-7.68px", xs: "-1px" },
               fontWeight: 500,
-              lineHeight: "130px",
+              lineHeight: { lg: "130px", xs: "45px" },
             }}
           >
             systems.
           </Typography>
-          <Stack direction={"row"} alignItems={"flex-end"} spacing={3}>
+          <Stack
+            direction={{ lg: "row", xs: "column" }}
+            alignItems={{ lg: "flex-end", xs: "flex-start" }}
+            spacing={3}
+          >
             <FilledButton
               sx={{
                 borderRadius: "128px",
@@ -75,6 +84,7 @@ const Careers = () => {
                 color: COLORS.WHITE,
                 textTransform: "initial",
                 whiteSpace: "nowrap",
+                width: { lg: "auto", xs: "100%" },
               }}
             >
               <Circle sx={{ fill: COLORS.WHITE, fontSize: 8, mr: 1.5 }} />

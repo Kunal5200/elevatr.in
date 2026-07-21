@@ -8,7 +8,8 @@ const SmallTrustLine = () => {
   return (
     <Box
       sx={{
-        minHeight: "80vh",
+        minHeight: { lg: "80vh", xs: "auto" },
+        py: { xs: 10 },
         display: "flex",
         alignItems: "center",
         justifyContent: "center",

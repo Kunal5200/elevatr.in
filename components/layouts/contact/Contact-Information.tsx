@@ -14,13 +14,13 @@ import Image from "next/image";
 
 const ContactInformation = () => {
   return (
-    <Box sx={{ mt: 30 }}>
+    <Box sx={{ mt: { lg: 30, xs: 10 } }}>
       <Container maxWidth="lg">
         <Grid container>
-          <Grid size={8}>
+          <Grid size={{ lg: 8, xs: 12 }}>
             <Typography
               sx={{
-                fontSize: 24,
+                fontSize: { lg: 24, xs: 16 },
                 fontFamily: poppins.style.fontFamily,
                 lineHeight: "36px",
               }}
@@ -29,19 +29,22 @@ const ContactInformation = () => {
             </Typography>
             <Typography
               sx={{
-                fontSize: 64,
+                fontSize: { lg: 64, xs: 30 },
                 fontFamily: poppins.style.fontFamily,
                 fontWeight: 500,
-                lineHeight: "84px",
-                letterSpacing: "-3.84px",
+                lineHeight: { lg: "84px", xs: "40px" },
+                letterSpacing: { lg: "-3.84px", xs: "-1px" },
               }}
             >
               We are always <br /> happy to assist you
             </Typography>
           </Grid>
-          <Grid size={3}>
+          <Grid size={{ lg: 3, xs: 12 }} sx={{ mt: { xs: 3 } }}>
             <Typography
-              sx={{ fontSize: 22, fontFamily: poppins.style.fontFamily }}
+              sx={{
+                fontSize: { lg: 22, xs: 16 },
+                fontFamily: poppins.style.fontFamily,
+              }}
             >
               Email Address
             </Typography>
@@ -50,7 +53,7 @@ const ContactInformation = () => {
             />
             <Typography
               sx={{
-                fontSize: 22,
+                fontSize: { lg: 22, xs: 16 },
                 fontFamily: poppins.style.fontFamily,
                 fontWeight: 600,
                 mt: 2,
@@ -60,7 +63,7 @@ const ContactInformation = () => {
             </Typography>
             <Typography
               sx={{
-                fontSize: 22,
+                fontSize: { lg: 22, xs: 16 },
                 fontFamily: poppins.style.fontFamily,
               }}
             >
@@ -68,7 +71,7 @@ const ContactInformation = () => {
             </Typography>
             <Typography
               sx={{
-                fontSize: 22,
+                fontSize: { lg: 22, xs: 16 },
                 fontFamily: poppins.style.fontFamily,
               }}
             >
@@ -77,9 +80,9 @@ const ContactInformation = () => {
           </Grid>
         </Grid>
 
-        <Box sx={{ mt: 20 }}>
+        <Box sx={{ mt: { lg: 20, xs: 10 } }}>
           <Grid container alignItems="center" spacing={4}>
-            <Grid size={8}>
+            <Grid size={{ lg: 8, xs: 12 }}>
               <Divider sx={{ borderColor: COLORS.BLACK, borderWidth: 1 }} />
               <Typography
                 sx={{
@@ -93,7 +96,7 @@ const ContactInformation = () => {
                 Career infrastructure, Just got reimagined.
               </Typography>
             </Grid>
-            <Grid size={2}>
+            {/* <Grid size={{ lg: 2, xs: 12 }} sx={{ mt: 2 }}>
               <Image
                 src={logo}
                 alt="logo"
@@ -102,7 +105,7 @@ const ContactInformation = () => {
             </Grid>
             <Grid size={2}>
               <Divider sx={{ borderColor: COLORS.BLACK, borderWidth: 1 }} />
-            </Grid>
+            </Grid> */}
           </Grid>
         </Box>
       </Container>

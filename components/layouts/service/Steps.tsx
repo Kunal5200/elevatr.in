@@ -1,12 +1,12 @@
 "use client";
 import { Box } from "@mui/material";
 import React, { useRef } from "react";
-import { useScroll } from "framer-motion";
+import { useScroll, useSpring } from "framer-motion";
 import AnimatedStep from "./components/AnimatedStep";
 
 const stepsData = [
   {
-    largeTitleLine1: "1.Build your career",
+    largeTitleLine1: "1. Build your career",
     largeTitleLine2: "identity",
     largeDesc:
       "Create a structured profile, not just a resume. Everything about your work, skills, and experience in one place.",
@@ -16,7 +16,7 @@ const stepsData = [
       "Everything about your work, skills, and experience in one place.",
   },
   {
-    largeTitleLine1: "2.Understand where",
+    largeTitleLine1: "2. Understand where",
     largeTitleLine2: "you stand",
     largeDesc:
       "See your strengths, gaps, and role readiness. No more guessing what to improve.",
@@ -25,7 +25,7 @@ const stepsData = [
     smallDesc2: "No more guessing what to improve.",
   },
   {
-    largeTitleLine1: "3.Build your career",
+    largeTitleLine1: "3. Build your career",
     largeTitleLine2: "identity",
     largeDesc:
       "Create a structured profile, not just a resume. Everything about your work, skills, and experience in one place.",
@@ -35,7 +35,7 @@ const stepsData = [
       "Everything about your work, skills, and experience in one place.",
   },
   {
-    largeTitleLine1: "4.Understand where",
+    largeTitleLine1: "4. Understand where",
     largeTitleLine2: "you stand",
     largeDesc:
       "See your strengths, gaps, and role readiness. No more guessing what to improve.",
@@ -53,12 +53,23 @@ const Steps = () => {
     offset: ["start start", "end end"],
   });
 
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
   return (
     <Box
       ref={containerRef}
       sx={{
         position: "relative",
         height: `${(stepsData.length + 1) * 100}vh`,
+        marginBottom: {
+          xs: `calc(-100vh + ${stepsData.length * 70}px)`,
+          md: `calc(-100vh + ${stepsData.length * 100}px)`,
+        },
+        zIndex: 0,
       }}
     >
       {stepsData.map((step, index) => (
@@ -68,7 +79,7 @@ const Steps = () => {
           index={index}
           totalSteps={stepsData.length}
           isLastStep={index === stepsData.length - 1}
-          scrollYProgress={scrollYProgress}
+          scrollYProgress={smoothProgress}
         />
       ))}
     </Box>

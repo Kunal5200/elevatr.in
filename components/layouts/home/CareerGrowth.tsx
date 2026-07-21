@@ -23,7 +23,7 @@ const CareerGrowth = () => {
     "Learning platforms",
   ];
   return (
-    <Box sx={{ mt: 10 }}>
+    <Box sx={{ mt: { lg: 10, xs: 4 } }}>
       <Container maxWidth="lg">
         <Typography
           sx={{
@@ -48,7 +48,11 @@ const CareerGrowth = () => {
             fragmented.
           </Typography>
         </Typography>
-        <Grid container sx={{ mt: { lg: 8, xs: 3 } }} spacing={4}>
+        <Grid
+          container
+          sx={{ mt: { lg: 8, xs: 3 } }}
+          spacing={{ lg: 4, xs: 2 }}
+        >
           <Grid size={{ lg: 6, xs: 12 }}>
             <Box sx={{ width: { lg: 500, xs: "100%" } }}>
               <Typography

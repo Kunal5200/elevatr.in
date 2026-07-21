@@ -27,10 +27,11 @@ const StartyourCareer = () => {
   return (
     <Box
       sx={{
-        minHeight: "100vh",
+        minHeight: { lg: "100vh", xs: "auto" },
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        py: { xs: 4 },
       }}
     >
       <Container maxWidth="lg">
@@ -46,7 +47,7 @@ const StartyourCareer = () => {
             >
               What You Get (Today)
             </Typography>
-            <Stack direction={{ lg: "column", xs: "row" }}>
+            <Box sx={{ display: { lg: "block", xs: "none" } }}>
               <Typography
                 sx={{
                   fontFamily: poppins.style.fontFamily,
@@ -104,7 +105,44 @@ const StartyourCareer = () => {
               >
                 identity.
               </Typography>
-            </Stack>
+            </Box>
+            <Box sx={{ display: { lg: "none", xs: "block" } }}>
+              <Typography
+                sx={{
+                  fontFamily: poppins.style.fontFamily,
+                  fontSize: { lg: 128, xs: 40 },
+                  fontWeight: 700,
+                  lineHeight: { lg: "120px", xs: "50px" },
+                  letterSpacing: { lg: "-7.68px", xs: "-1px" },
+                }}
+              >
+                Start{"    "}
+                <Typography
+                  sx={{
+                    fontFamily: poppins.style.fontFamily,
+                    fontSize: { lg: 128, xs: 40 },
+                    fontWeight: 275,
+                    lineHeight: { lg: "120px", xs: "50px" },
+                    letterSpacing: { lg: "-7.68px", xs: "-1px" },
+                  }}
+                  component={"span"}
+                >
+                  with your
+                </Typography>
+              </Typography>
+
+              <Typography
+                sx={{
+                  fontFamily: poppins.style.fontFamily,
+                  fontSize: { lg: 128, xs: 40 },
+                  fontWeight: 700,
+                  lineHeight: { lg: "120px", xs: "50px" },
+                  letterSpacing: { lg: "-7.68px", xs: "-1px" },
+                }}
+              >
+                identity.
+              </Typography>
+            </Box>
           </Grid>
           <Grid
             size={{ lg: 5, xs: 12 }}

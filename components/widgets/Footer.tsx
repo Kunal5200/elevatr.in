@@ -11,7 +11,7 @@ const Footer = () => {
     <Box
       sx={{
         backgroundColor: "#1A1A1A",
-        height: "100vh",
+        height: { lg: "100vh", xs: "60vh" },
         py: 4,
         position: "relative",
         // mt: 8,
@@ -56,6 +56,7 @@ const Footer = () => {
               color: COLORS.WHITE,
               letterSpacing: "-1.6px",
               lineHeight: "36px",
+              textAlign: { xs: "center" },
             }}
           >
             phone number and we will contact you shortly

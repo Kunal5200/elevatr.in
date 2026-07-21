@@ -16,16 +16,16 @@ import React from "react";
 
 const ContactForm = () => {
   return (
-    <Box sx={{ mt: 10 }}>
+    <Box sx={{ mt: { lg: 10, xs: 5 } }}>
       <Container maxWidth="lg">
         <Grid container spacing={4}>
-          <Grid size={4}>
+          <Grid size={{ lg: 4, xs: 12 }}>
             <TextField label="Your Name*" variant="standard" fullWidth />
           </Grid>
-          <Grid size={4}>
+          <Grid size={{ lg: 4, xs: 12 }}>
             <TextField label="Email*" variant="standard" fullWidth />
           </Grid>
-          <Grid size={4}>
+          <Grid size={{ lg: 4, xs: 12 }}>
             <MuiTelInput
               label="Phone Number (optional)"
               variant="standard"
@@ -33,7 +33,7 @@ const ContactForm = () => {
               defaultCountry="IN"
             />
           </Grid>
-          <Grid size={12}>
+          <Grid size={{ lg: 12, xs: 12 }}>
             <TextField
               label="Message*"
               variant="standard"
@@ -44,10 +44,11 @@ const ContactForm = () => {
           </Grid>
         </Grid>
         <Stack
-          direction={"row"}
-          alignItems={"center"}
+          direction={{ lg: "row", xs: "column" }}
+          alignItems={{ lg: "center", xs: "flex-start" }}
           justifyContent={"space-between"}
-          sx={{ mt: 7 }}
+          sx={{ mt: { lg: 7, xs: 4 } }}
+          spacing={{ xs: 4 }}
         >
           <Button
             sx={{

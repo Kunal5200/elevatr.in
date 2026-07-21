@@ -1,15 +1,17 @@
+"use client";
 import { COLORS } from "@/utils/enum";
 import { poppins, surgena } from "@/utils/fonts";
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 import journey from "@/images/banner/platform-journey.png";
 import Image from "next/image";
 const OnePlatform = () => {
+  const phone = useMediaQuery("(max-width:600px)");
   return (
     <Box
       sx={{
-        mt: 10,
-        height: "100vh",
+        mt: { lg: 10, xs: 4 },
+        height: { lg: "100vh", xs: "auto" },
         display: "flex",
         alignItems: "center",
         justifyContent: "center",

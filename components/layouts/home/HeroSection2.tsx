@@ -12,7 +12,7 @@ const HeroSection2 = () => {
     <Box>
       <Box
         sx={{
-          minHeight: "100vh",
+          minHeight: { lg: "100vh", xs: "auto" },
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -86,7 +86,7 @@ const HeroSection2 = () => {
           >
             (Built for what’s next)
           </Typography>
-          <Box sx={{ textAlign: "center" }}>
+          <Box sx={{ textAlign: "center", mt: { xs: 5 } }}>
             <Image
               src={abstract}
               alt=""

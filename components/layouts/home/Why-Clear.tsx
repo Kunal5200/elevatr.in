@@ -14,20 +14,20 @@ const WhyClear = () => {
             <Typography
               sx={{
                 fontFamily: poppins.style.fontFamily,
-                fontSize: { lg: 125, xs: 60 },
+                fontSize: { lg: 125, xs: 40 },
                 fontWeight: 275,
-                lineHeight: { lg: "128px", xs: "70px" },
-                letterSpacing: "-7.68px",
+                lineHeight: { lg: "128px", xs: "50px" },
+                letterSpacing: { lg: "-7.68px", xs: "-1px" },
               }}
             >
               Why{" "}
               <Typography
                 sx={{
                   fontFamily: poppins.style.fontFamily,
-                  fontSize: { lg: 125, xs: 60 },
+                  fontSize: { lg: 125, xs: 40 },
                   fontWeight: 700,
-                  lineHeight: { lg: "128px", xs: "70px" },
-                  letterSpacing: "-7.68px",
+                  lineHeight: { lg: "128px", xs: "50px" },
+                  letterSpacing: { lg: "-7.68px", xs: "-1px" },
                 }}
                 component={"span"}
               >
@@ -48,7 +48,7 @@ const WhyClear = () => {
             </Typography>
           </Grid>
         </Grid>
-        <Grid container spacing={2} sx={{ mt: 3 }}>
+        <Grid container spacing={2} sx={{ my: 3 }}>
           {WHY_ELEVATR_CARD_DATA.map((val, i) => (
             <Grid size={{ lg: 6, xs: 12 }} key={i}>
               <WhyElevatrCard

@@ -8,21 +8,22 @@ const HowWorks = () => {
   return (
     <Box
       sx={{
-        height: "100vh",
+        height: { lg: "100vh", xs: "auto" },
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        pt: { xs: 4 },
       }}
     >
       <Container maxWidth="lg">
         <Grid container alignItems={"flex-end"} spacing={5}>
-          <Grid size={3}>
+          <Grid size={{ lg: 3, xs: 12 }}>
             <Typography
               sx={{
                 fontFamily: poppins.style.fontFamily,
-                fontSize: 36,
+                fontSize: { lg: 36, xs: 24 },
                 fontWeight: 700,
-                lineHeight: "52px",
+                lineHeight: { lg: "52px", xs: "30px" },
               }}
             >
               How Elevatr Works
@@ -37,7 +38,7 @@ const HowWorks = () => {
               A career, step by step.
             </Typography>
           </Grid>
-          <Grid size={9}>
+          <Grid size={{ lg: 9, xs: 12 }}>
             <Image
               src={works_banner}
               alt="works_banner"

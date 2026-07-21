@@ -18,9 +18,11 @@ const ServiceLayout = () => {
       <CareerSystem />
       <HowWorks />
       <Steps />
-      <Skills />
-      <WhyElevatr />
-      <Careers />
+      <Box sx={{ position: "relative", zIndex: 10, backgroundColor: "#fff" }}>
+        <Skills />
+        <WhyElevatr />
+        <Careers />
+      </Box>
     </Box>
   );
 };
